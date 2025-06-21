@@ -35,15 +35,13 @@ if st.button("Initialize RAG System"):
             separators=["\n\n", "\n", " ", ""]
         )
         chunks = text_splitter.split_documents(documents)
-        
-        embeddings = HuggingFaceEmbeddings(
-            model_name="sentence-transformers/all-MiniLM-L6-v2"
-        )
-        st.session_state.vectorstore = InMemoryVectorStore.from_documents(
-            chunks, 
-            embeddings
-        )
-        st.success("RAG system initialized successfully!")
+
+        try:
+            embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+            st.session_state.vectorstore = InMemoryVectorStore.from_documents(chunks, embeddings)
+            st.success("RAG system initialized successfully!") 
+        except Exception as e:
+            st.error(f"Embedding failed: {e}")
 
 if st.session_state.vectorstore is not None:
     llm = ChatOpenAI(model_name="gpt-4")
