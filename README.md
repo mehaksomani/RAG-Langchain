@@ -28,5 +28,57 @@ This project demonstrates how to build a fully functional AI assistant that can 
   </tbody>
 </table>
 
-## Project Structure
+## Getting Started
 
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/rag-langchain.git
+cd rag-langchain
+```
+
+### 2. Create and Activate a Virtual Environment
+
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Set Environment Variables
+
+Create a `.env` file or export directly:
+
+```
+OPENAI_API_KEY=your_openai_key
+```
+
+### 5. Run the App
+
+```bash
+streamlit run apps/web_rag.py
+```
+
+## Deployment
+
+This app can be deployed on:
+
+- Streamlit Cloud  
+- Render / Railway / Hugging Face Spaces  
+
+Ensure your vector database and LLMs are properly configured for deployment environments.
+
+## Learning Resources
+
+- [LangChain Documentation](https://docs.langchain.com)
+- [Streamlit Documentation](https://docs.streamlit.io/)
+- [RAG Blog Post](https://www.riis.com/blog/introduction-to-rag-with-langchain-and-openai)
+- [Ollama Setup](https://ollama.com/)
+- [YouTube RAG Tutorial](https://youtu.be/YLPNA1j7kmQ?si=jV2yH3ltUaiq434a)
+
+Thankyou for watching!
